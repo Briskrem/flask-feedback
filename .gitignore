@@ -1,0 +1,10 @@
+venv/
+
+<!-- {% if 'user_id' not in session %}
+            <a href="/register" class="navbar-brand">Register</a>
+            <a href="/login" class="navbar-brand">Login</a>
+        {% endif %}
+        
+        {% if 'user_id' in session %}
+            <a href="/users/{{user_id}}">Logout</a>
+        {% endif %} -->

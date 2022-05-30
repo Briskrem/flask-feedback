@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- <div class="lead"> -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <span class="navbar-brand mb-0 h1">FEEDback Application</span>
+        
+        
+        {%if session['user_id']%}
+            <a href="/logout" class="navbar-brand">Logout</a>
+            <a href="/users/{{user_id}}" class="navbar-brand">USER PROFILE</a>
+            <a href="/secret" class="navbar-brand">The Secret</a>
+            <a href="/feedback">feedbacks</a>
+        {%else%}
+        <a href="/register" class="navbar-brand">Register</a>
+        <a href="/login" class="navbar-brand">Login</a>
+        {% endif %}
+        
+    </nav>
+    
+<!-- </div> -->
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <span class="navbar-brand mb-0 h1">FEEDback Application</span>
+    <a href="/register" class="navbar-brand">Register</a>
+    <!-- mb-0  centers the button in nav -->
+    <h2 class="navbar-brand mb-0 h1">Hello and WELCOME</h2>
+</nav>
+<h5>Please Login</h5>
+
+<div class="message container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category,message in messages %}
+                <p class="{{category}}">{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
+
+<div class="row justify-content-center align-self-center "  >
+    <div class="text-center w-50 p-4 " style="border:1px solid grey">
+        <form action="/login" method="POST">
+            {{form.hidden_tag()}}
+            {% for field in form if field.widget.input_type !='hidden' %}
+            {{field.label(class="form-label")}}
+            {{field(class_="form-control")}}
+            {% endfor %}
+            <button class="btn btn-success btn-block">ENTER</button>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

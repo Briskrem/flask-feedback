@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 display-1>REGSITER HERE</h1>
+<div class="row justify-content-center align-self-center " style="border:2px solid">
+    <div class="col-5 text-center ">
+        <form action="/register" method="POST">
+            {{form.hidden_tag()}}
+            {% for field in form if field.widget.input_type != 'hidden' %}
+                <div class="form-outline mb-4">
+                    {{field.label(class="form-label")}}
+                    {{field(class_="form-control")}}
+                </div>
+            {% endfor %}
+            <button class="btn btn-success btn-block">SUBMIT</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
